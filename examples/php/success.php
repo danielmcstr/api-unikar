@@ -26,3 +26,22 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 echo $response;
+
+/**
+ * Exemplo de resposta
+ * 
+ * {
+ *   "error": false,
+ *   "mensagem": "Payments found successfuly",
+ *   "data": [
+ *        {
+ *           "dueDate": "2021-08-10",
+ *           "bankSlipUrl": "https://www....",
+ *           "description": "...",
+ *           "value": 99.99,
+ *          "status": "PENDING"
+ *       }
+ *  ]
+ * }
+ * 
+ */
