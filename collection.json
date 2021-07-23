@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "5ca97988-cb04-49c3-9ae3-096442831aa0",
+		"name": "iGestão - Unikar API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Requisição Segunda Via iGestão UNIKAR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Token",
+						"value": "[TOKEN]",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "placa",
+							"value": "AAA1111",
+							"description": "required (string) or cpf",
+							"type": "text"
+						},
+						{
+							"key": "cpf",
+							"value": "999.999.999-99",
+							"description": "required (string) or placa",
+							"type": "text"
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"description": "optional (number) default:0",
+							"type": "text"
+						},
+						{
+							"key": "limit",
+							"value": "1",
+							"description": "optional (number) default:2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://unigestor.com.br/unikar/_modulos/asaas/segundaviaboleto.php",
+					"protocol": "http",
+					"host": [
+						"unigestor",
+						"com",
+						"br"
+					],
+					"path": [
+						"unikar",
+						"_modulos",
+						"asaas",
+						"segundaviaboleto.php"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sucesso na requisição",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Token",
+								"value": "$token",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "placa",
+									"value": "$placa",
+									"description": "required (string) or cpf",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "115.794.267-94",
+									"description": "required (string) or placa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "optional (number) default:0",
+									"type": "text"
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"description": "optional (number) default:2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://unigestor.com.br/unikar/_modulos/asaas/segundaviaboleto.php",
+							"protocol": "http",
+							"host": [
+								"unigestor",
+								"com",
+								"br"
+							],
+							"path": [
+								"unikar",
+								"_modulos",
+								"asaas",
+								"segundaviaboleto.php"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 23 Jul 2021 18:25:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.26"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Content-Type, Accept, Authorization, X-Request-With"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "X-Company",
+							"value": "companyA"
+						},
+						{
+							"key": "X-offset",
+							"value": "0"
+						},
+						{
+							"key": "X-Total",
+							"value": "11"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding,User-Agent"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Length",
+							"value": "328"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=2, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"mensagem\": \"Payments found successfuly\",\n    \"data\": [\n        {\n            \"dueDate\": \"2021-08-10\",\n            \"bankSlipUrl\": \"https://www...\",\n            \"description\": \"...\",\n            \"value\": 164.9,\n            \"status\": \"PENDING\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Erro na requisição",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Token",
+								"value": "[TOKEN]",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "placa",
+									"value": "AUV6A33",
+									"description": "required (string) or cpf",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cpf",
+									"value": "115.794.267-94",
+									"description": "required (string) or placa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "optional (number) default:0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"description": "optional (number) default:2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://unigestor.com.br/unikar/_modulos/asaas/segundaviaboleto.php",
+							"protocol": "http",
+							"host": [
+								"unigestor",
+								"com",
+								"br"
+							],
+							"path": [
+								"unikar",
+								"_modulos",
+								"asaas",
+								"segundaviaboleto.php"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 23 Jul 2021 18:26:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.26"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Content-Type, Accept, Authorization, X-Request-With"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "X-Company",
+							"value": "companyA"
+						},
+						{
+							"key": "X-limit",
+							"value": "2"
+						},
+						{
+							"key": "X-offset",
+							"value": "0"
+						},
+						{
+							"key": "Vary",
+							"value": "User-Agent"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": true,\n    \"mensagem\": \"Invalid request\"\n}"
+				},
+				{
+					"name": "Ausência de Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Token",
+								"value": "[TOKEN]",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "placa",
+									"value": "AUV6A33",
+									"description": "required (string) or cpf",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cpf",
+									"value": "115.794.267-94",
+									"description": "required (string) or placa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "optional (number) default:0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"description": "optional (number) default:2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://unigestor.com.br/unikar/_modulos/asaas/segundaviaboleto.php",
+							"protocol": "http",
+							"host": [
+								"unigestor",
+								"com",
+								"br"
+							],
+							"path": [
+								"unikar",
+								"_modulos",
+								"asaas",
+								"segundaviaboleto.php"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 23 Jul 2021 18:27:05 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.26"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Content-Type, Accept, Authorization, X-Request-With"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Vary",
+							"value": "User-Agent"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=2, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": true,\n    \"mensagem\": \"Missing Token\"\n}"
+				}
+			]
+		}
+	]
+}
