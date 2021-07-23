@@ -21,27 +21,41 @@ Documentação da API para emissão de segunda via de boletos do iGestão
 ## Overview
 A API foi desenvolvida na padrão Representational State Transfer, **REST**. Para habilitar a integração de um serviço primeiro ela deve ser cadastrada no iGestão e através da solicitação será gerado um token de acesso a api. Este token deverá ser passado sempre no cabeçalho da request com a chave “X-Token”.
 
-## POST Requisição Segunda Via de Boleto
-### ENDPOINT
+## Segunda Via de Boleto
+### Requisição
+#### ENDPOINT [POST] 
 ```http://unigestor.com.br/unikar/_modulos/asaas/segundaviaboleto.php```
-### HEADERS
+#### HEADERS
 ```X-Token: [TOKEN]```
-### BODY
-formdata
-placa
-AAA1111
-required (string) or cpf
-
-cpf
-999.999.999-99
-required (string) or placa
-
-offset
-0
-optional (number) default:0
-
-limit
-1
-optional (number) default:2
-
-
+#### BODY
+_formdata_
+|key|value|description|
+|---|---|---|
+|placa|AAA1111|_required (string) or cpf_|
+|cpf|999.999.999-99|_required (string) or placa_|
+|offset|0|_optional (number) default:0_|
+|limit|1|_optional (number) default:2_|
+### Resposta
+#### HEADER
+```
+X-Company: [NAME]
+X-offset: [OFFSET]
+X-Total: [TOTAL]
+Content-Type: application/json;charset=utf-8
+```
+#### BODY
+```json
+{
+    "error": false,
+    "mensagem": "Payments found successfuly",
+    "data": [
+        {
+            "dueDate": "2021-08-10",
+            "bankSlipUrl": "https://www...",
+            "description": "...",
+            "value": 999.0,
+            "status": "PENDING"
+        }
+    ]
+}
+```
