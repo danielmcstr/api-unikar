@@ -9,13 +9,13 @@ Documentação da API para emissão de segunda via de boletos do iGestão
 │    ├─── php
 |    |     ├───curl
 |    |           ├─── success.php
-|    |           ├─── error.php
-|    |           ├─── token_missing.php
+|    |           ├─── error.php // em breve
+|    |           ├─── token_missing.php // em breve
 │    ├─── js
 |    |     ├─── jQuery
-|    |           ├─── success.js
-|    |           ├─── error.js
-|    |           ├─── token_missing.js
+|    |           ├─── success.js // em breve
+|    |           ├─── error.js // em breve
+|    |           ├─── token_missing.js // em breve
 |
 ```
 ## Overview
