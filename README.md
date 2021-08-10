@@ -59,3 +59,44 @@ Content-Type: application/json;charset=utf-8
     ]
 }
 ```
+
+#### EXEMPLO: Erro na requisição
+```json
+{
+    "error": true,
+    "mensagem": "Invalid request"
+}
+```
+
+
+#### EXEMPLO: Ausência de Token
+```json
+{
+    "error": true,
+    "mensagem": "Missing Token"
+}
+```
+
+#### EXEMPLO: Cliente não encontrado no iGestão
+```json
+{
+    "error": true,
+    "mensagem": "Registry 'client' not found"
+}
+```
+#### EXEMPLO: Cliente não encontrado no ASAAS
+```json
+{
+    "error": true,
+    "mensagem": "Registry 'customer_asaas' not found"
+}
+```
+#### EXEMPLO: Sem pagamentos em aberto
+```json
+{
+    "error": false,
+    "mensagem": "Payments not found"
+}
+```
+
+
