@@ -12,7 +12,7 @@
 				"header": [
 					{
 						"key": "X-Token",
-						"value": "[TOKEN]",
+						"value": "{{TOKEN}}",
 						"type": "text"
 					}
 				],
@@ -21,13 +21,14 @@
 					"formdata": [
 						{
 							"key": "placa",
-							"value": "AAA1111",
+							"value": "QPC8J32",
 							"description": "required (string) or cpf",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "cpf",
-							"value": "999.999.999-99",
+							"value": "148497167170",
 							"description": "required (string) or placa",
 							"type": "text"
 						},
@@ -35,7 +36,8 @@
 							"key": "offset",
 							"value": "0",
 							"description": "optional (number) default:0",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "limit",
@@ -86,14 +88,14 @@
 									"key": "placa",
 									"value": "$placa",
 									"description": "required (string) or cpf",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "cpf",
 									"value": "115.794.267-94",
 									"description": "required (string) or placa",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								},
 								{
 									"key": "offset",
@@ -437,8 +439,384 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"error\": true,\n    \"mensagem\": \"Missing Token\"\n}"
+				},
+				{
+					"name": "Cliente não encontrado no iGestao",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "placa",
+									"value": "QPC8J32",
+									"description": "required (string) or cpf",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cpf",
+									"value": "111111111",
+									"description": "required (string) or placa",
+									"type": "text"
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "optional (number) default:0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"description": "optional (number) default:2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://unigestor.com.br/unikar/_modulos/asaas/segundaviaboleto.php",
+							"protocol": "http",
+							"host": [
+								"unigestor",
+								"com",
+								"br"
+							],
+							"path": [
+								"unikar",
+								"_modulos",
+								"asaas",
+								"segundaviaboleto.php"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 10 Aug 2021 16:12:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.26"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Content-Type, Accept, Authorization, X-Request-With"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "X-Company",
+							"value": "companyA"
+						},
+						{
+							"key": "X-offset",
+							"value": "0"
+						},
+						{
+							"key": "Vary",
+							"value": "User-Agent"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=2, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": true,\n    \"mensagem\": \"Registry 'client' not found\"\n}"
+				},
+				{
+					"name": "Cliente não encontrado no ASAAS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "placa",
+									"value": "QPC8J32",
+									"description": "required (string) or cpf",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cpf",
+									"value": "148.497.167-17",
+									"description": "required (string) or placa",
+									"type": "text"
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "optional (number) default:0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"description": "optional (number) default:2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://unigestor.com.br/unikar/_modulos/asaas/segundaviaboleto.php",
+							"protocol": "http",
+							"host": [
+								"unigestor",
+								"com",
+								"br"
+							],
+							"path": [
+								"unikar",
+								"_modulos",
+								"asaas",
+								"segundaviaboleto.php"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 10 Aug 2021 16:17:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.26"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Content-Type, Accept, Authorization, X-Request-With"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "X-Company",
+							"value": "companyA"
+						},
+						{
+							"key": "X-offset",
+							"value": "0"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding,User-Agent"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Length",
+							"value": "89"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=2, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": true,\n    \"mensagem\": \"Registry 'customer_asaas' not found\"\n}"
+				},
+				{
+					"name": "Sem pagamentos abertos no ASAAS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "placa",
+									"value": "QPC8J32",
+									"description": "required (string) or cpf",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cpf",
+									"value": "148497167170",
+									"description": "required (string) or placa",
+									"type": "text"
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "optional (number) default:0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"description": "optional (number) default:2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://unigestor.com.br/unikar/_modulos/asaas/segundaviaboleto.php",
+							"protocol": "http",
+							"host": [
+								"unigestor",
+								"com",
+								"br"
+							],
+							"path": [
+								"unikar",
+								"_modulos",
+								"asaas",
+								"segundaviaboleto.php"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 10 Aug 2021 16:21:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.26"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Content-Type, Accept, Authorization, X-Request-With"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "X-Company",
+							"value": "companyA"
+						},
+						{
+							"key": "X-offset",
+							"value": "0"
+						},
+						{
+							"key": "Vary",
+							"value": "User-Agent"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=2, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"mensagem\": \"Payments not found\"\n}"
 				}
 			]
+		}
+	],
+	"variable": [
+		{
+			"key": "TOKEN",
+			"value": "8a200057153258f49de7a99a7b4f61eb"
 		}
 	]
 }
