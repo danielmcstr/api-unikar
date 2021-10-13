@@ -115,3 +115,14 @@ HTTP Status Code:404
 ```
 
 
+#### EXEMPLO: Há pagamentos em aberto que estão vencidos há mais de 5 dias
+```
+HTTP Status Code:422
+```
+```json
+{
+    "error": false,
+    "mensagem": "Found a payment OVERDUE > 5 days 2021-09-15"
+}
+```
+
