@@ -21,16 +21,16 @@
 					"formdata": [
 						{
 							"key": "placa",
-							"value": "QPC8J32",
+							"value": "LSF8C16",
 							"description": "required (string) or cpf",
-							"type": "text",
-							"disabled": true
+							"type": "text"
 						},
 						{
 							"key": "cpf",
-							"value": "148497167170",
+							"value": "115.794.267-94",
 							"description": "required (string) or placa",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "offset",
@@ -41,7 +41,7 @@
 						},
 						{
 							"key": "limit",
-							"value": "1",
+							"value": "100",
 							"description": "optional (number) default:2",
 							"type": "text"
 						}
@@ -809,6 +809,136 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"error\": false,\n    \"mensagem\": \"Payments not found\"\n}"
+				},
+				{
+					"name": "Há pagamentos em aberto que estão vencidos há mais de 5 dias",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "placa",
+									"value": "LSF8C16",
+									"description": "required (string) or cpf",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "148.128.987-06",
+									"description": "required (string) or placa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "optional (number) default:0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"description": "optional (number) default:2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://unigestor.com.br/unikar/_modulos/asaas/segundaviaboleto.php",
+							"protocol": "http",
+							"host": [
+								"unigestor",
+								"com",
+								"br"
+							],
+							"path": [
+								"unikar",
+								"_modulos",
+								"asaas",
+								"segundaviaboleto.php"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 13 Oct 2021 18:26:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.26"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Content-Type, Accept, Authorization, X-Request-With"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "X-Company",
+							"value": "companyA"
+						},
+						{
+							"key": "X-offset",
+							"value": "0"
+						},
+						{
+							"key": "X-Total",
+							"value": "0"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding,User-Agent"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=2, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"mensagem\": \"Found a payment OVERDUE > 5 days 2021-09-15\"\n}"
 				}
 			]
 		}
