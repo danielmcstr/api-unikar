@@ -61,6 +61,9 @@ Content-Type: application/json;charset=utf-8
 ```
 
 #### EXEMPLO: Erro na requisição
+```
+HTTP Status Code:400
+```
 ```json
 {
     "error": true,
@@ -70,6 +73,9 @@ Content-Type: application/json;charset=utf-8
 
 
 #### EXEMPLO: Ausência de Token
+```
+HTTP Status Code:403
+```
 ```json
 {
     "error": true,
@@ -78,6 +84,9 @@ Content-Type: application/json;charset=utf-8
 ```
 
 #### EXEMPLO: Cliente não encontrado no iGestão
+```
+HTTP Status Code:404
+```
 ```json
 {
     "error": true,
@@ -85,6 +94,9 @@ Content-Type: application/json;charset=utf-8
 }
 ```
 #### EXEMPLO: Cliente não encontrado no ASAAS
+```
+HTTP Status Code:404
+```
 ```json
 {
     "error": true,
@@ -92,6 +104,9 @@ Content-Type: application/json;charset=utf-8
 }
 ```
 #### EXEMPLO: Sem pagamentos em aberto
+```
+HTTP Status Code:404
+```
 ```json
 {
     "error": false,
